@@ -8,7 +8,12 @@ export type Product = {
   price: number
 }
 
-export const ProductReducer = (state: Product, action: IProductAction) => {
+export interface IProductState {
+  productList: Product[];
+  selectedProduct?: Product;
+}
+
+export const ProductReducer = (state: IProductState, action: IProductAction): IProductState => {
   switch (action.type) {
     case PlayerActionTypes.PRODUCTS_RESPONSE:
       return { ...state, productList: action.value }
