@@ -1,21 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react'
+import Main from './Main'
+import { DefaultTheme, Provider } from 'react-native-paper'
+import ProductProvider from './app/ui/providers/ProductProvider'
+import CartProvider from './app/ui/providers/CartProvider'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const theme = {
+  ...DefaultTheme,
+  dark: false,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#a91f1f',
+    background: '#6abb6a'
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const theme2 = {
+  ...DefaultTheme,
+  dark: true,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#1f54a9',
+    background: '#485366'
+  }
+}
+
+export default function App () {
+  const [value, setValue] = useState(1)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setValue(2)
+    }, 4000)
+  }, [])
+
+  return (
+    <Provider theme={value === 1 ? theme : theme2}>
+      <ProductProvider>
+        <CartProvider>
+          <Main />
+        </CartProvider>
+      </ProductProvider>
+    </Provider>
+  )
+}
