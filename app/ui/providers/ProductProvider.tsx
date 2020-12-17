@@ -1,29 +1,28 @@
+// eslint-disable-next-line no-use-before-define
 import React, { createContext, Dispatch, useReducer } from 'react'
 import { IProductAction } from '../../data/actions/ProductActions'
-import { Product, ProductReducer } from '../../data/reducers/ProductReducer'
+import { IProductState, ProductReducer } from '../../data/reducers/ProductReducer'
 
-interface IState {
-  productList: Product[],
-  selectedProduct?: Product
-}
-
-export const initialState: IState = {
+export const initialState: IProductState = {
   productList: []
 }
 
-// export type ProductContextData = {
-//   store: ProductContext,
-//   productDispatch: Dispatch<IProductAction>
-// }
+export type ProductContextData = {
+  store: IProductState,
+  productDispatch: Dispatch<IProductAction>
+}
 
 // export const ProductListContext = createContext<ProductContextData | undefined>(undefined)
 
-export const ProductListState = createContext<Dispatch<typeof initialState> | undefined>(undefined)
+export const ProductListState = createContext<ProductContextData | undefined>(undefined)
 
 // export const ProductListDispatch = React.createContext<Dispatch<IProductAction> | undefined>(undefined)
 
 export default function ProductProvider (props: { children: React.ReactNode }) {
-  const [productState, productDispatch] = useReducer(ProductReducer, initialState)
+  const [productState, productDispatch] = useReducer(
+    ProductReducer,
+    initialState
+  )
 
   // const combinedReducers: ProductContextData = {
   //   store: {
@@ -33,7 +32,7 @@ export default function ProductProvider (props: { children: React.ReactNode }) {
   // }
 
   return (
-    <ProductListState.Provider value={{ state: productState, productDispatch }}>
+    <ProductListState.Provider value={{ store: productState, productDispatch }}>
       {props.children}
     </ProductListState.Provider>
   )
