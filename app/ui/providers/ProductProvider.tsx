@@ -1,40 +1,24 @@
 import React, { createContext, Dispatch, useReducer } from 'react'
 import { IProductAction } from '../../data/actions/ProductActions'
-import { Product, ProductReducer } from '../../data/reducers/ProductReducer'
+import { ProductState, ProductReducer } from '../../data/reducers/ProductReducer'
 
-interface IState {
-  productList: Product[],
-  selectedProduct?: Product
-}
-
-export const initialState: IState = {
+export const initialState: ProductState = {
   productList: []
 }
 
-// export type ProductContextData = {
-//   store: ProductContext,
-//   productDispatch: Dispatch<IProductAction>
-// }
+export type ProductContextData = {
+  store: ProductState,
+  productDispatch: Dispatch<IProductAction>
+}
 
-// export const ProductListContext = createContext<ProductContextData | undefined>(undefined)
-
-export const ProductListState = createContext<Dispatch<typeof initialState> | undefined>(undefined)
-
-// export const ProductListDispatch = React.createContext<Dispatch<IProductAction> | undefined>(undefined)
+export const ProductContext = createContext<ProductContextData>({} as ProductContextData)
 
 export default function ProductProvider (props: { children: React.ReactNode }) {
   const [productState, productDispatch] = useReducer(ProductReducer, initialState)
 
-  // const combinedReducers: ProductContextData = {
-  //   store: {
-  //     ...productState
-  //   },
-  //   productDispatch
-  // }
-
   return (
-    <ProductListState.Provider value={{ state: productState, productDispatch }}>
-      {props.children}
-    </ProductListState.Provider>
+    <ProductContext.Provider value={{ store: productState, productDispatch }}>
+      { props.children }
+    </ProductContext.Provider>
   )
 }

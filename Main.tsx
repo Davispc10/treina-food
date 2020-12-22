@@ -1,9 +1,8 @@
-import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import ProductsView from './app/ui/views/ProductsView/ProductsView'
+import BottomNavigation from './app/ui/views/BottomNavigation'
 
 export default function Main () {
   return (
-    <ProductsView />
+    <BottomNavigation />
   )
 }

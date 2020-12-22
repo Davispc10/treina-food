@@ -1,2 +1,12 @@
-{"name":"Hamburguer","price":12,"picture":"https://exame.com/wp-content/uploads/2020/05/mafe-studio-LV2p9Utbkbw-unsplash-1.jpg?quality=70&strip=info&resize=680,453","options":["Cebola","Tomate","Queijo","Alface","Carne","Frango"],"_id":"jllxkw1mhnZExwq3"}
 {"name":"Batatas","price":4.5,"picture":"https://img.itdg.com.br/tdg/images/recipes/000/018/897/164773/164773_original.jpg?mode=crop&width=710&height=400","options":["Cebola","Queijo","Ketchup"],"_id":"3nGeifTdSOaf9Yj9"}
+{"name":"Hamburguer","price":12,"picture":"https://exame.com/wp-content/uploads/2020/05/mafe-studio-LV2p9Utbkbw-unsplash-1.jpg?quality=70&strip=info&resize=680,453","options":["Cebola","Tomate","Queijo","Alface","Carne","Frango"],"_id":"jllxkw1mhnZExwq3"}
+{"_id":"Mu4SuD5ob5mM9Xh3"}
+{"name":"Coca Cola","price":3.5,"picture":"https://drogariasp.vteximg.com.br/arquivos/ids/283705-1000-1000/coca-cola-220ml-spal-Drogaria-SP-641707.jpg?v=636519743001570000","options":["Canudo","Copo"],"_id":"5JiSIlwUcilOXqcP"}
+{"name":"HotDog","price":8,"picture":"https://drogariasp.vteximg.com.br/arquivos/ids/283705-1000-1000/coca-cola-220ml-spal-Drogaria-SP-641707.jpg?v=636519743001570000","options":["Canudo","Copo"],"_id":"DlxjJDm197ucYaIs"}
+{"$$deleted":true,"_id":"DlxjJDm197ucYaIs"}
+{"$$deleted":true,"_id":"Mu4SuD5ob5mM9Xh3"}
+{"_id":"Ai8jv37ERVqc8bfm"}
+{"_id":"T2apojeXUipMEWQO"}
+{"name":"Hot-Dog","price":8,"picture":"https://www.revistamenu.com.br/wp-content/uploads/2020/08/appdog.jpg","options":["Mostarde","Ketchup"],"_id":"AizQf09Dtt6KBLL4"}
+{"$$deleted":true,"_id":"Ai8jv37ERVqc8bfm"}
+{"$$deleted":true,"_id":"T2apojeXUipMEWQO"}

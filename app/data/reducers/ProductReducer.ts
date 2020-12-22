@@ -1,18 +1,23 @@
-import { IProductAction, PlayerActionTypes } from '../actions/ProductActions'
-// import { ProductContext } from '../../ui/providers/ProductProvider'
+import { IProductAction, ProductActionTypes } from '../actions/ProductActions'
 
 export type Product = {
   id: string
   picture: string
-  title: string
-  price: number
+  name: string
+  price: number,
+  options: string[]
 }
 
-export const ProductReducer = (state: Product, action: IProductAction) => {
+export type ProductState = {
+  productList: Product[];
+  selectedProduct?: Product | null;
+}
+
+export const ProductReducer = (state: ProductState, action: IProductAction): ProductState => {
   switch (action.type) {
-    case PlayerActionTypes.PRODUCTS_RESPONSE:
+    case ProductActionTypes.PRODUCTS_RESPONSE:
       return { ...state, productList: action.value }
-    case PlayerActionTypes.PRODUCT_SELECT:
+    case ProductActionTypes.PRODUCT_SELECT:
       return { ...state, selectedProduct: action.value }
     default: return state
   }

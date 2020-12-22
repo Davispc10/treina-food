@@ -19,8 +19,8 @@ const theme2 = {
   dark: true,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#1f54a9',
-    background: '#485366'
+    primary: '#ca2b2b'
+    // background: '#8791a3'
   }
 }
 
