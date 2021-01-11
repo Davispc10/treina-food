@@ -3,8 +3,7 @@ import { SafeAreaView, ScrollView } from 'react-native'
 import { Appbar, IconButton, List, Button, Snackbar } from 'react-native-paper'
 import { NumberService } from '../../../data/services/NumberService'
 import { CartContext } from '../../providers/CartProvider'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesome } from '@expo/vector-icons'
 import { cartRemoveProduct, cartClear } from '../../../data/actions/CartActions'
 import { Product } from '../../../data/reducers/ProductReducer'
 import { ApiService } from '../../../data/services/ApiService'
@@ -47,7 +46,7 @@ const CartView: React.FC = (props) => {
               right={() =>
                 <IconButton
                   onPress={() => removeFromCart(product)}
-                  icon={({ size, color }) => <FontAwesomeIcon icon={faTimes} size={size} color={color} /> }
+                  icon={({ size, color }) => <FontAwesome name='times' size={size} color={color} /> }
                 />
               }
             />
